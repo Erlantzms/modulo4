@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+         //* Escribe un programa que dada una palabra en minúsculas, muestre en la consola la mitad de la palabra en minúsculas y la otra mitad en mayúsculas.
+
+        /* Pistas:
+         * 1. Debes utilizar al menos 3 métodos de los vistos anteriormente
+         * 2. La mitad de una palabra contiene mitad de sus caracteres, para ello necesitarás saber cuantos caracteres tiene la palabra
+         * 3. Para poder modificar la mitad de la palabra (mayúsculas), necesitarás primero obtener una cadena que sólo tenga esa parte
+         * 4. Una vez que tengamos la mitad de la palabra en mayúsculas, tendrás que reemplazar una subcadena por otra
+         */
+
+        // Definimos la palabra a modificar. Se la pedimos al usuario
+        
+        let palabra = prompt("intrduzca una palabra")
+
+        // Buscamos la longitud de la palabra
+        let longitud_total = palabra.length;
+        console.log (longitud_total);
+
+        // Determinamos la mitad de la palabra
+        let longitud_mitad = (longitud_total)/2;
+        console.log (longitud_mitad);
+
+        // Definimos una cadena con la primera mitad de la paalabra y la convertimos a mayusculas con método toUpperCase()
+        let palabra_mitad1 = palabra.substring(0,longitud_mitad);
+        let palabra_mayusculas = palabra_mitad1.toUpperCase();
+        console.log ("La primera mitad de la palabra escrita en mayúsculas: " + palabra_mayusculas);
+
+        //Definimos otra cadena con la segunda mitad de la palabra. Reemplazamos la cadena de la primera mitad por la de la segunda.
+        //Segunda mitad en mayusculas con método toLowerCase()
+        let palabra_mitad2 = palabra.substring(longitud_mitad, longitud_total);
+        let palabra_minusculas = palabra_mitad1.replace(palabra_mitad1, palabra_mitad2);
+
+        //Imprimimos la segunda mitad en minusculas con método toLowerCase()
+        console.log ("La segunda mitad de la palabra escrita en minúsculas: " + palabra_minusculas.toLowerCase());
+
+
+    </script>
+</body>
+
+</html>
